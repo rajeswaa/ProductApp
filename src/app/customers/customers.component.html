@@ -1,0 +1,80 @@
+<div class="card bg-dark text-white">
+  <div class="card-header text-align">
+    {{title}}
+  </div>
+  <div class='card-body'>
+    <form class="form-horizontal"
+          novalidate
+          #saveCustomerForm="ngForm"
+          (ngsumbit)="save(saveCustomerForm)">
+        <fieldset>
+            <div  class="form-group">
+                <label class="col-sm-2 control-label" for="firstName">First Name</label>
+                <div class="col-sm-8">
+                  <input  type="text" 
+                          class="form-control" 
+                          required 
+                          minlength="3" 
+                          id="firstName" 
+                          name="firstName" 
+                          placeholder="First name (required)"                          
+                          [(ngModel)]='customer.firstName'
+                          #firstName="ngModel"/>
+                  <div *ngIf="(firstName.touched || firstName.dirty) && firstName.errors" class="alert alert-danger">
+                    <div *ngIf="firstName.errors.required">First Name is required</div>
+                    <div *ngIf="firstName.errors.minlength">First Name should be longer than 3 characters</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="lastName">Last Name</label>
+                <div class="col-sm-8">
+                  <input  type="text" 
+                          id="lastName" 
+                          name="lastName" 
+                          class="form-control" 
+                          maxlength="25" 
+                          required 
+                          placeholder="Last Name(required)"
+                          #lastNameVar='ngModel'
+                          [(ngModel)]="customer.lastName" />
+                  <div class="alert alert-danger" *ngIf="(lastNameVar.touched || lastNameVar.dirty) && lastNameVar.errors">
+                    <div *ngIf="lastNameVar.errors.required">Last name is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email</label>
+                <div class="col-sm-8">
+                  <input  type="email"
+                          id="email"
+                          name="email"
+                          class="form-control"
+                          required
+                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+"
+                          placeholder="Email (required)"
+                          [(ngModel)]="customer.email"
+                          #email='ngModel' />
+                  <div class="alert alert-danger" *ngIf="(email.touched || email.dirty) && email.errors">
+                    <div *ngIf="email.errors.required">email is required</div>
+                    <div *ngIf="email.errors.pattern">please enter a valid email address</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                    <button type="submit" 
+                            class="btn btn-outline-secondary"
+                            [disabled]="!saveCustomerForm.valid">
+                      <span class="fa fa-save"></span> Save
+                    </button>
+                </div>
+              </div>
+        </fieldset>
+    </form>
+  </div>
+</div>
+<br>dirty: {{saveCustomerForm.dirty}}
+<br>touched: {{saveCustomerForm.touched}}
+<br>valid: {{saveCustomerForm.valid}}
+<br>{{saveCustomerForm.form}}

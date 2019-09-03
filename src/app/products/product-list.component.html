@@ -1,0 +1,58 @@
+<div class="card bg-dark text-white">
+    <div class="card-header text-align">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">  
+        <div class="row">
+            <span class="col-sm-5" class="text-align">Filter By <input type="text" name="filter" [(ngModel)]='listItem' /></span>
+        </div>
+        <div class="row">
+            <span class="col-sm-6" class="text-align">Filtered By: {{listItem}}</span>
+        </div>
+        <div class="row">
+            <div class="table table-responsive-sm">
+                <mat-table [dataSource] = "datasource" matSort matSortActive="productName" matSortDirection="asc" matSortDisableClear>
+                    <ng-container matColumnDef="imageUrl">
+                            <mat-header-cell *matHeaderCellDef><button class="btn btn-primary" (click)='toggleImage()'>{{showImage ? "Show" : "Hide" }} Image</button></mat-header-cell>
+                            <mat-cell *matCellDef="let row"><img *ngIf='showImage' [src]='row.imageUrl' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'  /></mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="productName">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Product</mat-header-cell>
+                        <mat-cell *matCellDef="let row" highlight='green' [underline]="true" >{{row.productName | titlecase}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="productCode">
+                            <mat-header-cell *matHeaderCellDef matSortDisabled>Code</mat-header-cell>
+                            <mat-cell *matCellDef="let row"><a [routerLink]="['/products',row.id]" [queryParams]="{'filteredBy': listItem, 'showImage': showImage}">{{row.productCode | uppercase | convertToSpaces:'-' }}</a></mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="description">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+                            <mat-cell *matCellDef="let row" class="text-align">{{row.description | lowercase}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="releaseDate">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Release Date</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{row.releaseDate | date: "MMM dd yyyy"}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="price">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+                            <mat-cell *matCellDef="let row">{{row.price | currency:'AUD': 'symbol-narrow'}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef='starRating'>
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>Rating</mat-header-cell>
+                            <mat-cell *matCellDef="let row"><pm-star [rating]='row.starRating' (ratingClicked)='onRatingClicked($event)'></pm-star></mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="id">
+                            <mat-header-cell *matHeaderCellDef matSortDisabled>Edit</mat-header-cell>
+                            <mat-cell *matCellDef="let row"><a [routerLink]="['/products',row.id,'edit']">Edit</a></mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef='displayColumns' color="primary"></mat-header-row>
+                    <mat-row *matRowDef='let row; columns:displayColumns' (click)="onRowClicked(row)"></mat-row>
+                </mat-table>            
+            </div>  
+        </div>      
+    </div>  
+    <div class="card-footer">
+        <div class="row" style="float:right">
+            <mat-paginator  [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+        </div>
+    </div>
+</div>

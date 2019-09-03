@@ -1,0 +1,117 @@
+  <div class="card bg-dark text-white">
+    <div class="card-header">
+      {{ title }}
+    </div>
+    <div class="card-body">
+      <form novalidate (ngSubmit)="onSave()" [formGroup]='productForm' class="form-horizontal bg-faded">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="Name">Product Name</label>
+          <div class="col-sm-8">
+            <input  class="form-control" 
+                    type="text"
+                    placeholder="Product Name (required)"
+                    id="Name"
+                    formControlName="productName"
+                    [ngClass]="{ 'is-invalid': submitted && f.productName.errors }">
+                    <div class="invalid-feedback">
+                        <div *ngIf='f.productName.errors?.required'>Please enter Product Name</div>
+                        <div *ngIf='f.productName.errors?.minLength'>Product Name should be longer than 3 characters</div>
+                      </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2" for="Code">Product Code</label>
+          <div class="form-group col-sm-8">
+            <input  type="text"
+                    id="Code"
+                    formControlName="productCode"
+                    placeholder="Product Code (required)"
+                    class="form-control"
+                    [ngClass]="{'is-invalid': submitted && f.productCode.invalid }">
+            <div *ngIf="submitted && f.productCode.invalid" class="invalid-feedback">
+              <div *ngIf="f.productCode.errors?.required">Please enter Product Code</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2" for="Code">Product Code</label>
+          <div class="form-group col-sm-8">
+            <input  type="text"
+                    id="Code"
+                    formControlName="releaseDate"
+                    placeholder="Release Date"
+                    class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2" for="Code">Description</label>
+          <div class="form-group col-sm-8">
+            <input  type="text"
+                    id="Code"
+                    formControlName="description"
+                    placeholder="Description"
+                    class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="price">Price</label>
+          <div class="col-sm-8">
+            <input  class="form-control" 
+                    type="text"
+                    placeholder="Price"
+                    id="price"
+                    formControlName="price"
+                    [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+                    <div class="invalid-feedback">
+                        <div *ngIf='f.price.errors?.pattern'>Please enter valid price</div>
+                      </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="starRating">Star Rating</label>
+          <div class="col-sm-8">
+            <input  class="form-control" 
+                    type="text"
+                    placeholder="starRating"
+                    id="starRating"
+                    formControlName="starRating"
+                    [ngClass]="{ 'is-invalid': submitted && f.starRating.errors }">
+                    <div class="invalid-feedback">
+                        <div *ngIf='f.starRating.errors?.range'>Rating can have value from 1 to 5</div>
+                      </div>
+          </div>
+        </div>
+        <div formArrayName="tags" *ngFor="let tag of tags.controls; let i=index"> 
+          <div [formGroupName]="i">
+            <div class="form-group row" >
+              <label class="col-sm-2 col-form-label" for="tag">Tag</label>
+              <div class="col-sm-8">
+                <input  class="form-control" 
+                        type="text"
+                        placeholder="Tag"
+                        id="tag"
+                        formControlName="tag">
+              </div>
+            </div>        
+          </div>
+        </div>
+        <div class="form-group row mt-3">
+            <div class="col-sm-2">
+                <button class="btn btn-outline-secondary" type="button" (click)="addTags()">Add Tag</button>
+            </div>          
+          </div>
+        <div class="form-group row mx-auto">
+          <div class="col-sm-1">
+            <button type="submit" class="btn btn-outline-primary">
+              <span class="fa fa-save"></span> Save
+            </button>
+          </div>
+          <div class="col-sm-1">
+            <button type="button" (click)="onBack()" class="btn btn-outline-primary">
+              <span class="fa fa-chevron-left"></span> Back
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
