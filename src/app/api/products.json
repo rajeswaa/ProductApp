@@ -1,0 +1,180 @@
+ [
+    {
+        "productId": 1,
+        "productName": "Leaf Rake",
+        "productCode": "GDN-0011",
+        "releaseDate": "March 19, 2016",
+        "description": "Leaf rake with 48-inch wooden handle.",
+        "price": 19.95,
+        "starRating": 3.2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+    },
+    {
+        "productId": 2,
+        "productName": "Garden Cart",
+        "productCode": "GDN-0023",
+        "releaseDate": "March 18, 2016",
+        "description": "15 gallon capacity rolling garden cart",
+        "price": 32.99,
+        "starRating": 4.2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+    },
+    {
+        "productId": 3,
+        "productName": "Hammer",
+        "productCode": "TBX-0048",
+        "releaseDate": "May 21, 2016",
+        "description": "Curved claw steel hammer",
+        "price": 8.9,
+        "starRating": 4.8,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+    },
+    {
+        "productId": 4,
+        "productName": "Saw",
+        "productCode": "TBX-0022",
+        "releaseDate": "May 15, 2016",
+        "description": "15-inch steel blade hand saw",
+        "price": 11.55,
+        "starRating": 3.7,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+    },
+    {
+        "productId": 5,
+        "productName": "Video Game Controller",
+        "productCode": "GMG-0042",
+        "releaseDate": "October 15, 2015",
+        "description": "Standard two-button video game controller",
+        "price": 35.95,
+        "starRating": 4.6,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    },
+    {
+        "productId": 6,
+        "productName": "Hammer",
+        "productCode": "HMG-0163",
+        "releaseDate": "April 15, 2016",
+        "description": "20-inch hammer",
+        "price": 45.95,
+        "starRating": 4.6,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/308572/tsquare.png"
+    },
+    {
+        "productId": 7,
+        "productName": "Soap Bottle",
+        "productCode": "SBG-1343",
+        "releaseDate": "July 15, 2018",
+        "description": "Medium sized sopa bottle",
+        "price": 14.45,
+        "starRating": 3.1,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/307946/soap-bottle.png"
+    },
+    {
+        "productId": 8,
+        "productName": "Art work",
+        "productCode": "SBG-1343",
+        "releaseDate": "July 15, 2018",
+        "description": "30 inch art work",
+        "price": 23.95,
+        "starRating": 3.6,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/308808/cute-girl.png"
+    },{
+        "productId": 9,
+        "productName": "Art work",
+        "productCode": "SBG-1343",
+        "releaseDate": "July 15, 2018",
+        "description": "35 inch art work",
+        "price": 65.95,
+        "starRating": 47,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/308815/japanese-crane.png"
+    },
+    {
+        "productId": 11,
+        "productName": "Leaf Rake",
+        "productCode": "GDN-0011",
+        "releaseDate": "March 19, 2016",
+        "description": "Leaf rake with 48-inch wooden handle.",
+        "price": 19.95,
+        "starRating": 3.2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+    },
+    {
+        "productId": 12,
+        "productName": "Garden Cart",
+        "productCode": "GDN-0023",
+        "releaseDate": "March 18, 2016",
+        "description": "15 gallon capacity rolling garden cart",
+        "price": 32.99,
+        "starRating": 4.2,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+    },
+    {
+        "productId": 13,
+        "productName": "Hammer",
+        "productCode": "TBX-0048",
+        "releaseDate": "May 21, 2016",
+        "description": "Curved claw steel hammer",
+        "price": 8.9,
+        "starRating": 4.8,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+    },
+    {
+        "productId": 14,
+        "productName": "Saw",
+        "productCode": "TBX-0022",
+        "releaseDate": "May 15, 2016",
+        "description": "15-inch steel blade hand saw",
+        "price": 11.55,
+        "starRating": 3.7,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+    },
+    {
+        "productId": 15,
+        "productName": "Video Game Controller",
+        "productCode": "GMG-0042",
+        "releaseDate": "October 15, 2015",
+        "description": "Standard two-button video game controller",
+        "price": 35.95,
+        "starRating": 4.6,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    },
+    {
+        "productId": 16,
+        "productName": "Hammer",
+        "productCode": "HMG-0163",
+        "releaseDate": "April 15, 2016",
+        "description": "20-inch hammer",
+        "price": 45.95,
+        "starRating": 4.6,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/308572/tsquare.png"
+    },
+    {
+        "productId": 17,
+        "productName": "Soap Bottle",
+        "productCode": "SBG-1343",
+        "releaseDate": "July 15, 2018",
+        "description": "Medium sized sopa bottle",
+        "price": 14.45,
+        "starRating": 3.1,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/307946/soap-bottle.png"
+    },
+    {
+        "productId": 18,
+        "productName": "Art work",
+        "productCode": "SBG-1343",
+        "releaseDate": "July 15, 2018",
+        "description": "30 inch art work",
+        "price": 23.95,
+        "starRating": 3.6,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/308808/cute-girl.png"
+    },{
+        "productId": 19,
+        "productName": "Art work",
+        "productCode": "SBG-1343",
+        "releaseDate": "July 15, 2018",
+        "description": "35 inch art work",
+        "price": 65.95,
+        "starRating": 47,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/308815/japanese-crane.png"
+    }    
+]
